@@ -316,14 +316,14 @@ Contáctame:
             {
                 "name": "Me Encantas",
                 "message": "Si pudiera elegir un lugar seguro, sería a tu lado.",
-                "src": "3.png",
+                "src": "2.png",
                 "hue": 355, 
                 "pattern": "heart"
             },
             {
                 "name": "Para ti",
                 "message": "Para ti, que haces latir mi corazón de una forma única. En cada recuerdo y en cada latido, estás tú.",
-                "src": "2.png",
+                "src": "3.png",
                 "hue": 358,
                 "pattern": "heart"
             },
@@ -337,28 +337,28 @@ Contáctame:
             {
                 "name": "Para Siempre",
                 "message": "No me importa cuántas vidas tenga que vivir, en cada una de ellas te elegiré a ti. Para siempre y un día más.",
-                "src": "6.png",
+                "src": "5.png",
                 "hue": 358,
                 "pattern": "heart"
             },
             {
                 "name": "Aventuras juntos",
                 "message": "No hay lugar en el mundo donde prefiera estar que a tu lado, descubriendo lugares nuevos.",
-                "src": "7.png",
+                "src": "6.png",
                 "hue": 355,
                 "pattern": "heart"
             },
             {
                 "name": "Nuestro Primer Beso",
                 "message": "El día que nuestros labios se encontraron, el universo entero contuvo el aliento. Desde entonces, cada beso tuyo es mi galaxia favorita.",
-                "src": "8.png",
+                "src": "7.png",
                 "hue": 0,
                 "pattern": "heart"
             },
             {
                 "name": "Amor de mi Vida",
                 "message": "Cuanto más tiempo estamos juntos, más te amo.",
-                "src": "5.png",
+                "src": "8.png",
                 "hue": 350,
                 "pattern": "heart"
             },
@@ -968,11 +968,12 @@ Contáctame:
             music.volume = 0.5;
 
             window.addEventListener('experienceStarted', function () {
-                music.load();
+                music.volume = 0.5;
                 music.play().then(function () {
                     playIcon.style.display  = 'none';
                     pauseIcon.style.display = 'block';
-                }).catch(function () {
+                }).catch(function (error) {
+                    console.log("Error al reproducir música:", error);
                     playIcon.style.display  = 'block';
                     pauseIcon.style.display = 'none';
                 });
